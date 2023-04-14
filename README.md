@@ -92,7 +92,7 @@ Google Kubernetes Engine cluster nodes scale up automation setup done using GCP 
     | Fields     | Description |
     |------------|-------------|
     | nodeCount | The desired node count for the pool. |
-    | name | The name (project, location, cluster, node pool id) of the node pool to set size. Specified in the format projects/*/locations/*/clusters/*/nodePools/*. |
+    | name | The name (project, location, cluster, node pool id) of the node pool to set size. Specified in the format projects/ */locations/ */clusters/ */nodePools/ *. |
 
 
 - Authorization Scopes
