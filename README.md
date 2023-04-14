@@ -68,7 +68,7 @@ Click on create a job to set the parameter to run. There, you have to give it a 
     {
     "clusterId": "gke-test-01",
     "nodePoolId": "gke-node-pool-test-09",
-    "projectId": "testing-vm-302307",
+    "projectId": "<PROJECT_ID>",
     "nodeCount": 1
     }
     ```
@@ -117,7 +117,7 @@ Click on create a job to set the parameter to run. There, you have to give it a 
     ```diff
     {
     "clusterId": "gke-zonal-01",
-    "projectId": "testing-vm-302307",
+    "projectId": "<PROJECT_ID>",
     "nodePoolId": "gke",
     "zone": "asia-south1-a",
     "nodeCount": 1
