@@ -9,7 +9,7 @@ Google Kubernetes Engine cluster nodes scale up automation setup done using GCP 
 Google Kubernetes Engine (GKE) is a managed, production-ready environment for running Docker containers in the Google cloud. It permits you to form multiple-node clusters whereas conjointly providing access to any or all Kubernetes options.
 GKE works with docker applications. These applications are dockerized into platform-independent, isolated user-space instances. Before you deploy any workloads on a GKE cluster, you need to always dockerize the deployment first. GKE offers two types of clusters: regional and zonal. 
 
-Create the GKE cluster either using gcloud command or using GCP Console. Below ``gcloud`` command can be used to create a GKE Cluster.
+Create the GKE cluster either using gcloud command or using GCP console. Below ``gcloud`` command can be used to create a GKE Cluster.
 
 ```diff
 gcloud container clusters create gke \
@@ -36,12 +36,12 @@ Each cron job created using Cloud Scheduler is sent to a target according to a s
 - Pub/Sub topics
 - App Engine HTTP/S applications
 
-Navigate to the GCP Console and click on [Cloud Scheduler](https://console.cloud.google.com/cloudscheduler)
+Navigate to the GCP console and click on [Cloud Scheduler](https://console.cloud.google.com/cloudscheduler)
   <p>
   <img src="https://github.com/Adarsh-Suvarna/gke-node-scheduled-autoscaler/blob/main/img/img-5.png">
   </p>
 
-Click on Create Job to set the parameter to run. There, you have to give it a name, description, frequency, timezone and target. The frequency is specified using unix-cron format. For the target, you may choose between HTTP, Pub/Sub or App Engine HTTP. Since we cant to call the GCP GKE Cloud APIs choose the http. Fill all the details as shown in the below screenshot. We will be discussing URL, Body, Scope in the below section. As per the requirement you can copy those values into the cloud Scheduler.
+Click on Create Job to set the parameter to run. There, you have to give it a name, description, frequency, timezone and target. The frequency is specified using unix-cron format. We want to call the GKE cloud APIs so we have choosen http type. Fill all the details as shown in the below screenshot. We will be discussing URL, Body, Scope in the below section. As per the requirement you can copy those values into the cloud Scheduler.
   <p>
   <img src="https://github.com/Adarsh-Suvarna/gke-node-scheduled-autoscaler/blob/main/img/img-6.png">
   <img src="https://github.com/Adarsh-Suvarna/gke-node-scheduled-autoscaler/blob/main/img/img-7.png">
