@@ -37,6 +37,8 @@ The Google Cloud Scheduler can be found in the Tools section, on the GCP menu.
 Click on create a job to set the parameter to run. There, you have to give it a name, description, frequency, timezone and target. The frequency is specified using unix-cron format. For the target, you may choose between HTTP, Pub/Sub or App Engine HTTP. Since we cant to call the GCP GKE Cloud APIs choose the http. Fill all the details as shown in the below screenshot. We will be discussing URL, Body, Scope in the below section. As per the requirement you can copy those values into the cloud Scheduler.
   <p>
   <img src="https://github.com/Adarsh-Suvarna/gke-node-scheduled-autoscaler/blob/main/img/img-6.png">
+  <img src="https://github.com/Adarsh-Suvarna/gke-node-scheduled-autoscaler/blob/main/img/img-7.png">
+  <img src="https://github.com/Adarsh-Suvarna/gke-node-scheduled-autoscaler/blob/main/img/img-8.png">
   </p>
 
 ## Time based GKE Regional Cluster Node Auto scaling
