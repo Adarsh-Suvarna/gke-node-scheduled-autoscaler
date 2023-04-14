@@ -7,13 +7,13 @@ Google Kubernetes Engine cluster nodes scale up automation setup done using GCP 
 
 - Method 
 
-projects.locations.clusters.nodePools.setSize
+    projects.locations.clusters.nodePools.setSize
 
 - HTTP request
 
-```diff 
-POST https://container.googleapis.com/v1/projects/<PROJECT_ID>/locations/<LOCATION>/clusters/<CLUSTER_NAME>/nodePools/<NODEPOOL_NAME>:setSize
-```
+    ```diff 
+    POST https://container.googleapis.com/v1/projects/<PROJECT_ID>/locations/<LOCATION>/clusters/<CLUSTER_NAME>/nodePools/<NODEPOOL_NAME>:setSize
+    ```
 
 - Path parameters
 
@@ -24,17 +24,18 @@ POST https://container.googleapis.com/v1/projects/<PROJECT_ID>/locations/<LOCATI
 
 - Request body
 
-The request body contains data with the following structure:
+    The request body contains data with the following structure:
 
-**JSON representation**
-```diff
-{
-  "clusterId": "gke-test-01",
-  "nodePoolId": "gke-node-pool-test-09",
-  "projectId": "testing-vm-302307",
-  "nodeCount": 1
-}
-```
+    **JSON representation**
+
+    ```diff
+    {
+    "clusterId": "gke-test-01",
+    "nodePoolId": "gke-node-pool-test-09",
+    "projectId": "testing-vm-302307",
+    "nodeCount": 1
+    }
+    ```
 
     | Fields     | Description |
     |------------|-------------|
@@ -44,24 +45,23 @@ The request body contains data with the following structure:
     | nodePoolId | The name of the node pool to update. |
     | nodeCount | The desired node count for the pool. |
 
-
 - Authorization Scopes
 
-Requires the following OAuth scope
+    Requires the following OAuth scope
 
-https://www.googleapis.com/auth/cloud-platform
+    https://www.googleapis.com/auth/cloud-platform
 
 ## GKE Zonal Cluster
 
 - Method 
 
-projects.zones.clusters.nodePools.setSize
+    projects.zones.clusters.nodePools.setSize
 
 - HTTP request
 
-```diff 
-POST https://container.googleapis.com/v1/projects/<PROJECT_ID>/zones/<ZONE>/clusters/<CLUSTER_ID>/nodePools/<NODE_POOL_ID>/setSize
-```
+    ```diff 
+    POST https://container.googleapis.com/v1/projects/<PROJECT_ID>/zones/<ZONE>/clusters/<CLUSTER_ID>/nodePools/<NODE_POOL_ID>/setSize
+    ```
 
 - Path parameters
 
@@ -75,29 +75,31 @@ POST https://container.googleapis.com/v1/projects/<PROJECT_ID>/zones/<ZONE>/clus
 
 - Request body
 
-The request body contains data with the following structure
+    The request body contains data with the following structure
 
-**JSON representation**
-```diff
-{
-  "clusterId": "gke-zonal-01",
-  "projectId": "testing-vm-302307",
-  "nodePoolId": "gke",
-  "zone": "asia-south1-a",
-  "nodeCount": 1
-}
-```
+    **JSON representation**
+    ```diff
+    {
+    "clusterId": "gke-zonal-01",
+    "projectId": "testing-vm-302307",
+    "nodePoolId": "gke",
+    "zone": "asia-south1-a",
+    "nodeCount": 1
+    }
+    ```
+
 
     | Fields     | Description |
     |------------|-------------|
     | nodeCount | The desired node count for the pool. |
     | name | The name (project, location, cluster, node pool id) of the node pool to set size. Specified in the format projects/*/locations/*/clusters/*/nodePools/*. |
 
+
 - Authorization Scopes
 
-Requires the following OAuth scope
+    Requires the following OAuth scope
 
-https://www.googleapis.com/auth/cloud-platform
+    https://www.googleapis.com/auth/cloud-platform
 
 ## GKE Node Autoscaling Observations
 
@@ -122,5 +124,5 @@ Following section describes the result of the Kubernetes Engine (GKE) node autos
 Note: Cloud scheduler jobs are based on cron jobs and we can set a desired time to implement time based GKE Cluster Nodes scale up Automation.
 
 ### Contact Me
- If you have any doubts on this please reach out to me. Happy Learning!
+ If you have any doubts on this please reach out to me. Happy Learning !
  - Adarsh Suvarna : adarshasuvarna@outlook.com
