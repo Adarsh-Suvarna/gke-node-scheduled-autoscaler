@@ -3,7 +3,43 @@
 This repository explains the time based  Kubernetes Engine (GKE) node autoscaling. GKE's cluster autoscaler automatically resizes the number of nodes in a given node pool, based on the specified times. When demand is low during off-peak hours, the cluster autoscaler scales back down to a minimum size that we designate.
 Google Kubernetes Engine cluster nodes scale up automation setup done using GCP Cloud Scheduler and Google Cloud Platform - Google Kubernetes Engine API calls. The required API calls URLs and Body to initiate the job given in the below section.
 
-## GKE Regional Cluster
+## Google Kubernetes Engine
+Google Kubernetes Engine (also known as GKE) is a managed, production-ready environment for running Docker containers in the Google cloud. It permits you to form multiple-node clusters whereas conjointly providing access to any or all Kubernetes options.
+GKE works with docker applications. These applications are dockerized into platform-independent, isolated user-space instances. Before you deploy any workloads on a GKE cluster, You need to always dockerize the deployment first. GKE offers two types of clusters: regional and zonal. Regional clusters consist of a three Kubernetes control planes quorum, offering higher availability than a zonal cluster can provide for your cluster’s control plane API.
+Create the GKE cluster either using gcloud command or using GCP Console. Below ``gcloud`` command can be used to create a GKE Cluster.
+```diff
+gcloud container clusters create gke \
+    --enable-ip-alias \
+    --release-channel=stable \
+    --machine-type=e2-standard-2 \
+    --enable-autoscaling --min-nodes=1 --max-nodes=10 \
+    --num-nodes=1 \
+    --autoscaling-profile=optimize-utilization
+```
+
+  <p>
+  <img src="https://github.com/Adarsh-Suvarna/gke-pod-scheduled-autoscaler/blob/main/img/gke-1.png">
+  </p>
+
+## Google Cloud Scheduler
+Cloud Scheduler is a fully managed enterprise-grade cron job scheduler. It allows you to schedule virtually any job, including batch, big data jobs, cloud infrastructure operations, and more. You can automate everything, including retries in case of failure to reduce manual toil and intervention. Cloud Scheduler even acts as a single pane of glass, allowing you to manage all your automation tasks from one place.
+With Cloud Scheduler you set up scheduled units of work to be executed at defined times or regular intervals. These work units are commonly known as cron jobs. Typical use cases might include sending out a report email on a daily basis, updating cached data every 10 minutes, or updating summary information once an hour.
+Each cron job created using Cloud Scheduler is sent to a target according to a specified schedule, where the work for the task is accomplished. The target must be one of the following types:
+- Publicly available HTTP/S endpoints
+- Pub/Sub topics
+- App Engine HTTP/S applications
+
+The Google Cloud Scheduler can be found in the Tools section, on the GCP menu.
+  <p>
+  <img src="https://github.com/Adarsh-Suvarna/gke-pod-scheduled-autoscaler/blob/main/img/img-5.png">
+  </p>
+
+Click on create a job to set the parameter to run. There, you have to give it a name, description, frequency, timezone and target. The frequency is specified using unix-cron format. For the target, you may choose between HTTP, Pub/Sub or App Engine HTTP. Since we cant to call the GCP GKE Cloud APIs choose the http. Fill all the details as shown in the below screenshot. We will be discussing URL, Body, Scope in the below section. As per the requirement you can copy those values into the cloud Scheduler.
+  <p>
+  <img src="https://github.com/Adarsh-Suvarna/gke-pod-scheduled-autoscaler/blob/main/img/img-6.png">
+  </p>
+
+## Time based GKE Regional Cluster Node Auto scaling
 
 - Method 
 
@@ -51,7 +87,7 @@ Google Kubernetes Engine cluster nodes scale up automation setup done using GCP 
 
     https://www.googleapis.com/auth/cloud-platform
 
-## GKE Zonal Cluster
+## Time based GKE Zonal Cluster Node Auto scaling
 
 - Method 
 
